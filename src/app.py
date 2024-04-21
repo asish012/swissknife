@@ -1,5 +1,4 @@
 import streamlit as st
-import fitz
 import json
 import re
 from Translator import Translator, FinancialAdvisor
