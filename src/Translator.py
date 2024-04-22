@@ -22,7 +22,7 @@ class Translator:
     def __init__(self):
         pass
 
-    def translate(self, audio_file):
+    def translate_audio(self, audio_file):
         try:
             transcription = CLIENT.audio.translations.create(model="whisper-1", file=audio_file)
             if not transcription:
