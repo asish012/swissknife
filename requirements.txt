@@ -2,4 +2,4 @@ python-decouple
 requests
 openai
 streamlit
-fitz
+PyMuPDF
