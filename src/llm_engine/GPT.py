@@ -1,6 +1,8 @@
 import os
 import sys
+
 import streamlit as st
+
 sys.path.append('..')
 from decouple import config
 from openai import OpenAI
@@ -23,12 +25,10 @@ class GPTQuery:
         self._max_tokens = tokens
         self._temperature = temperature
 
-    def translations(self, query):
+    def process(self, query):
         try:
             print(">>>GPT System", self._system_prompt)
             print(">>>GPT Query", query)
-            transcription = self.CLIENT.audio.translations.create(model="whisper-1", file=audio_file)
-            # return transcription['text']
             completion = self.CLIENT.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
