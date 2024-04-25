@@ -85,9 +85,9 @@ class LangAgent:
 
     def answer(self, query, context):
         system_prompt = f"""
-        Act as an excellent answering machine.
+        Act as an answering machine.
         You'll be given a query and a context.
-        Answer the query from the provided context. 
+        Answer the query concisely from the provided context. 
         Only answer within the provided context.
         
         <Context>
