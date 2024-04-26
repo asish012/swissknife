@@ -33,8 +33,12 @@ class LangAgent:
 
         system_prompt = """
         You are a translator. 
-        The user will provide you a text.
-        If the majority of the provided text is not in English language, translate the text in English and fix grammatical issues.
+        You'll be given the raw content of a document. Try to understand the subject or the topic of the document. 
+        No need to output the topic.
+        If the language of the provided text is not English, translate the text in English and fix grammatical issues.
+        Then, format the document based on the topic.
+        The output should be in markdown format appropriately constructed based on the content topic.
+        No need to provide any note or comment except the content of the document.
         """
         max_tokens = 2000
         temperature = 1
@@ -99,7 +103,6 @@ class LangAgent:
 
         try:
             print(">>>GPT System", system_prompt)
-            print(">>>GPT Context", context)
             print(">>>GPT Query", query)
             completion = CLIENT.chat.completions.create(
                 model="gpt-3.5-turbo",

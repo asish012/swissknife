@@ -1,6 +1,6 @@
 import streamlit as st
 from app import menu
-from Linguist import LangAgent
+from agents.Linguist import LangAgent
 
 
 # Application Init
