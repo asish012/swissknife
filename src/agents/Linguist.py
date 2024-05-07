@@ -1,15 +1,15 @@
 import os
+from dotenv import load_dotenv
 import streamlit as st
-from decouple import config
 from openai import OpenAI
+
+load_dotenv()
 
 
 def get_openai_api_key():
-    api_key = config('OPENAI_API_KEY')
+    api_key = os.environ["OPENAI_API_KEY"]
     if not api_key:
         api_key = st.secrets["OPENAI_API_KEY"]
-    if not api_key:
-        api_key = os.environ["OPENAI_API_KEY"]
     return api_key
 
 

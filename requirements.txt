@@ -1,4 +1,4 @@
-python-decouple
+python-dotenv
 requests
 openai
 streamlit
