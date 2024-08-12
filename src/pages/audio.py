@@ -21,7 +21,7 @@ cols = st.columns([2, 0.1, 3])
 
 with cols[0]:
     st.write("<h4>Upload the audio file:</h4>", unsafe_allow_html=True)
-    audio_file = st.file_uploader("Upload Audio", type=['mp3', 'mp4'])
+    audio_file = st.file_uploader("Upload Audio", type=['mp3', 'mp4', 'm4a'])
 
     # Button: Translate
     _, button_cell, _ = st.columns(3)
